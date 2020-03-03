@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
+  <parameter name="browser" value="ff"/>
+  <test name="Zoho App Functional Regression Test - Chrome(failed)" parallel="tests">
+    <parameter name="browser" value="ff"/>
+    <classes>
+      <class name="com.zohoapp.testcases.Homepagetest">
+        <methods>
+          <include name="Setupframework"/>
+          <include name="Setupframework"/>
+          <include name="Verifyfooterlink"/>
+          <include name="dVerifyactivelink"/>
+          <include name="quit"/>
+          <include name="quit"/>
+          <include name="Verifytittle"/>
+          <include name="VerifycontactSalesLink"/>
+          <include name="Verifyheaderlink"/>
+        </methods>
+      </class> <!-- com.zohoapp.testcases.Homepagetest -->
+    </classes>
+  </test> <!-- Zoho App Functional Regression Test - Chrome(failed) -->
+  <test name="Zoho App Functional Regression Test - FF(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="com.zohoapp.testcases.Homepagetest">
+        <methods>
+          <include name="Setupframework"/>
+          <include name="Setupframework"/>
+          <include name="Verifyfooterlink"/>
+          <include name="dVerifyactivelink"/>
+          <include name="quit"/>
+          <include name="quit"/>
+          <include name="Verifytittle"/>
+          <include name="VerifycontactSalesLink"/>
+          <include name="Verifyheaderlink"/>
+        </methods>
+      </class> <!-- com.zohoapp.testcases.Homepagetest -->
+    </classes>
+  </test> <!-- Zoho App Functional Regression Test - FF(failed) -->
+</suite> <!-- Failed suite [Suite] -->
