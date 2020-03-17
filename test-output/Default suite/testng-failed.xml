@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.zohoapp.testcases.Loginpagetest">
+      <class name="com.zohoapp.testcases.Accountpagetest">
         <methods>
-          <include name="Validateloginpagetittle"/>
+          <include name="VerifyMandatoryFields"/>
+          <include name="Teardown"/>
           <include name="Setup"/>
-          <include name="Quit"/>
         </methods>
-      </class> <!-- com.zohoapp.testcases.Loginpagetest -->
+      </class> <!-- com.zohoapp.testcases.Accountpagetest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

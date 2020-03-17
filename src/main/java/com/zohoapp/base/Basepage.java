@@ -3,14 +3,19 @@ package com.zohoapp.base;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+
+import com.zohoapp.qa.utilities.ExcelReader;
 
 public class Basepage {
 
@@ -26,6 +31,7 @@ public class Basepage {
 	public FileInputStream fis;
 	public static Properties prop;
 	public static WebDriver driver;
+	public ExcelReader excel=new ExcelReader("E:\\ZOHOAPPSUITE\\src\\test\\resources\\testdata\\Testdata.xlsx");
 
 	public Basepage() {
 		prop = new Properties();
@@ -49,7 +55,18 @@ public class Basepage {
 
 		if (browsername.equalsIgnoreCase("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "D:\\chromedriver.exe");
-			driver = new ChromeDriver();
+			Map<String, Object> prefs = new HashMap<String, Object>();
+			prefs.put("profile.default_content_setting_values.notifications", 2);
+			prefs.put("credentials_enable_service", false);
+			prefs.put("profile.password_manager_enabled", false);
+			ChromeOptions options = new ChromeOptions();
+			options.setExperimentalOption("prefs", prefs);
+			options.addArguments("--disable-extensions");
+			options.addArguments("--disable-infobars");
+
+			driver = new ChromeDriver(options);
+
+			//driver = new ChromeDriver();
 
 		} else if (browsername.equalsIgnoreCase("ff")) {
 			System.setProperty("webdriver.gecko.driver", "D:\\geckodriver.exe");
