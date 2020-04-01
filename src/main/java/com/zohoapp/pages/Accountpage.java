@@ -4,6 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 import com.zohoapp.base.Basepage;
 
@@ -128,12 +129,10 @@ public class Accountpage extends Basepage {
 	@FindBy(css = "[id='errorMsg_Crm_Accounts_ACCOUNTNAME']")
 	@CacheLookup
 	public WebElement errormsg;
-	
-	
-	@FindBy(xpath="(//input[@id='saveAccountsBtn'])[2]")
+
+	@FindBy(css = "[id='saveAccountsBtn']")
 	@CacheLookup
 	public WebElement savebtn;
-	
 
 	@FindBy(css = "cancelAccountsBtn")
 	@CacheLookup
@@ -191,6 +190,7 @@ public class Accountpage extends Basepage {
 		shippingstatetb.sendKeys(sstate);
 		shippingstreettb.sendKeys(sstreet);
 		desctb.sendKeys(description);
+		savebtn.click();
 
 	}
 
@@ -204,9 +204,13 @@ public class Accountpage extends Basepage {
 		parentacctb.sendKeys(parentaccount);
 		acctnumtb.sendKeys(accountno);
 		accttypeddl.sendKeys(acctype);
+		Select selec = new Select(accttypeddl);
+		selec.selectByVisibleText("Analyst");
 		industryddl.sendKeys(industry);
 		revenuetb.sendKeys(revenue);
 		ratingddl.sendKeys(rating);
+		Select s = new Select(ratingddl);
+		s.deselectByIndex(2);
 		phonetb.sendKeys(phone);
 		faxtb.sendKeys(fax);
 		websitetb.sendKeys(website);
@@ -234,8 +238,11 @@ public class Accountpage extends Basepage {
 
 		savebtn.click();
 		String text = errormsg.getText();
-        System.out.println(text);
+		System.out.println(text);
 
 	}
+	
+	
+	
 
 }

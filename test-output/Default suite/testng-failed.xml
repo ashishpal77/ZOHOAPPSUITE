@@ -6,7 +6,8 @@
       <class name="com.zohoapp.testcases.Accountpagetest">
         <methods>
           <include name="VerifyMandatoryFields"/>
-          <include name="Teardown"/>
+          <include name="VerifyAccountCreation"/>
+          <include name="VerifyAccountCancel"/>
           <include name="Setup"/>
         </methods>
       </class> <!-- com.zohoapp.testcases.Accountpagetest -->

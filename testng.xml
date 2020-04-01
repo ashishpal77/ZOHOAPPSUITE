@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite" parallel="tests">
-	<test name="Zoho App Functional Regression Test - FF">
-		<parameter name="browser" value="chrome" />
-
-		<classes>
-			<class name="com.zohoapp.testcases.Homepagetest" />
-		</classes>
-	</test>
-	
-	<test name="Zoho App Functional Regression Test - Chrome">
-		<parameter name="browser" value="ff" />
-		<classes>
-			<class name="com.zohoapp.testcases.Homepagetest" />
-		</classes>
-	</test> 
-	<!-- Test -->
+<suite name="Suite">
+<listeners>
+		<listener class-name="com.zohoapp.Extentreport.ExtentReporterNG" />
+	</listeners>
+  <test name="Test">
+    <classes>
+      <class name="com.zohoapp.testcases.HomePagetest"/>
+      <class name="com.zohoapp.testcases.Zohoapppagetest"/>
+      <class name="com.zohoapp.testcases.Accountpagetest"/>
+      <class name="com.zohoapp.testcases.Loginpagetest"/>
+      <class name="com.zohoapp.testcases.Leadpagetest"/>
+    </classes>
+  </test> <!-- Test -->
 </suite> <!-- Suite -->

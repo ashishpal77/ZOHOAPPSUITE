@@ -14,7 +14,7 @@ public class CRMhomepage extends Basepage {
 	@CacheLookup
 	public WebElement shownamelbl;
 	
-	@FindBy(xpath="//div[contains(text(),'Leads')]")
+	@FindBy(xpath="//div[@data-value='Leads']")
 	@CacheLookup
 	public WebElement Leadslinks;
 	

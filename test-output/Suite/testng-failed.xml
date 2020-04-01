@@ -1,41 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="tests">
-  <parameter name="browser" value="ff"/>
-  <test name="Zoho App Functional Regression Test - Chrome(failed)" parallel="tests">
-    <parameter name="browser" value="ff"/>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="com.zohoapp.Extentreport.ExtentReporterNG"/>
+  </listeners>
+  <test name="Test(failed)">
     <classes>
-      <class name="com.zohoapp.testcases.Homepagetest">
+      <class name="com.zohoapp.testcases.Zohoapppagetest">
         <methods>
-          <include name="Setupframework"/>
-          <include name="Setupframework"/>
-          <include name="Verifyfooterlink"/>
-          <include name="dVerifyactivelink"/>
-          <include name="quit"/>
-          <include name="quit"/>
-          <include name="Verifytittle"/>
-          <include name="VerifycontactSalesLink"/>
-          <include name="Verifyheaderlink"/>
+          <include name="Setup"/>
+          <include name="Quit"/>
         </methods>
-      </class> <!-- com.zohoapp.testcases.Homepagetest -->
-    </classes>
-  </test> <!-- Zoho App Functional Regression Test - Chrome(failed) -->
-  <test name="Zoho App Functional Regression Test - FF(failed)" parallel="tests">
-    <parameter name="browser" value="chrome"/>
-    <classes>
-      <class name="com.zohoapp.testcases.Homepagetest">
+      </class> <!-- com.zohoapp.testcases.Zohoapppagetest -->
+      <class name="com.zohoapp.testcases.Leadpagetest">
         <methods>
-          <include name="Setupframework"/>
-          <include name="Setupframework"/>
-          <include name="Verifyfooterlink"/>
-          <include name="dVerifyactivelink"/>
-          <include name="quit"/>
-          <include name="quit"/>
-          <include name="Verifytittle"/>
-          <include name="VerifycontactSalesLink"/>
-          <include name="Verifyheaderlink"/>
+          <include name="docreateLeadpage"/>
+          <include name="Setup"/>
         </methods>
-      </class> <!-- com.zohoapp.testcases.Homepagetest -->
+      </class> <!-- com.zohoapp.testcases.Leadpagetest -->
+      <class name="com.zohoapp.testcases.Accountpagetest">
+        <methods>
+          <include name="VerifyMandatoryFields"/>
+          <include name="VerifyAccountCreation"/>
+          <include name="VerifyAccountCancel"/>
+          <include name="Setup"/>
+        </methods>
+      </class> <!-- com.zohoapp.testcases.Accountpagetest -->
+      <class name="com.zohoapp.testcases.Loginpagetest">
+        <methods>
+          <include name="Setup"/>
+          <include name="Quit"/>
+        </methods>
+      </class> <!-- com.zohoapp.testcases.Loginpagetest -->
+      <class name="com.zohoapp.testcases.HomePagetest">
+        <methods>
+          <include name="Setup"/>
+        </methods>
+      </class> <!-- com.zohoapp.testcases.HomePagetest -->
     </classes>
-  </test> <!-- Zoho App Functional Regression Test - FF(failed) -->
+  </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
